@@ -36,7 +36,7 @@ create table tblProjects(
 	Descr varchar(30) not null,
 	Start_Date date,
 	Planned_End_Date date,
-	Actual_End_Date date,
+	Actual_End_Date date check (Actual_End_Date > Planned_End_Date),
 	Budget numeric(10) check(Budget>0),
 	Client_ID numeric(4) references tblClients(Client_ID)
 
