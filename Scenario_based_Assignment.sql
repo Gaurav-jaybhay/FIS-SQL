@@ -203,7 +203,7 @@ insert into Order1 values(1,'1776-07-04',234.56,1),
 select * from Customer1
 select * from Order1
 
---[9] Display the Firstname and LastName of the customer who have placed exactly 2 orders.select c.first_name,c.last_name from Customer1 c
+--[9] Display the Firstname and LastName of the customer who have placed exactly 2 orders.select c.first_name,c.last_name from Customer1 c
 where c.customer_id in
 	(select o.customer_id from Order1 o group by customer_id having count(o.customer_id)=2)
 
